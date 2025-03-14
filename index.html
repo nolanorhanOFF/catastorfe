@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catastrophes et Éclipses Mondiales</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon ajouté -->
     <style>
         body { 
             font-family: Arial, sans-serif; 
@@ -47,10 +48,19 @@
             z-index: 9999;
         }
 
-        /* Style du logo pendant le chargement */
-        #loading-screen img {
-            width: 200px;
-            height: auto;
+        /* Animation du cercle de chargement */
+        .loader {
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            border-top: 8px solid #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         /* Cacher les événements jusqu'à ce que les données soient chargées */
@@ -60,9 +70,9 @@
     </style>
 </head>
 <body>
-    <!-- Écran de chargement avec logo -->
+    <!-- Écran de chargement avec cercle de chargement -->
     <div id="loading-screen">
-        <img src="logo.png" alt="Logo">
+        <div class="loader"></div>
     </div>
 
     <h1>Derniers Événements Mondiaux</h1>
